@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Links -->
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a  *ngIf ="loginService.isUserLoggedIn()"  routerLink="products" class="clickme info" routerLinkActive="active">
+                Products List</a>
+    </li>
+
+     <li class="nav-item">
+      <a  *ngIf ="loginService.isUserLoggedIn()" routerLink="add" class="clickme info" routerLinkActive="active">
+        Add Product</a>
+    </li>
+
+    <li class="nav-item">
+      <a  *ngIf ="loginService.isUserLoggedIn()" routerLink="dealers" class="clickme info" routerLinkActive="active">
+        Dealers Info</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a  *ngIf ="!loginService.isUserLoggedIn()" routerLink="/home" class="clickme info" routerLinkActive="active">
+        Home</a>
+        </li>
+
+    <li class="nav-item">
+      <a  *ngIf ="!loginService.isUserLoggedIn()" routerLink="/login" class="clickme info" routerLinkActive="active">
+        Login</a>
+       </li>
+
+    <li class="nav-item">
+      <a  *ngIf ="!loginService.isUserLoggedIn()" routerLink="/register" class="clickme info" routerLinkActive="active">
+        Register</a>
+        </li>
+
+        <li class="nav-item">
+          <a  *ngIf ="loginService.isUserLoggedIn()"routerLink="/logout" class="clickme info" routerLinkActive="active">
+           Logout</a>
+            </li>
+    
+
+
+
+  </ul>
+</nav>
+
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>
+  <div class="card">
+
+    <div class="card-body">
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer font-small mdb-color lighten-3 pt-4 card-body">
+
+  <div class="footer-copyright text-center py-3">All Rights Reserved 2022 @Wipro-Velocity</div>
+
+</footer>
